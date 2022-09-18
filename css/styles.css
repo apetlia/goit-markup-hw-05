@@ -125,13 +125,29 @@ img {
   color: var(--title-color);
 }
 
-.nav-link.active-page {
-  color: var(--accent-color);
-}
-
 .nav-link:hover,
 .nav-link:focus {
   color: var(--accent-color);
+}
+
+.nav-link.active-page {
+  position: relative;
+
+  color: var(--accent-color);
+}
+
+.nav-link.active-page::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  height: 4px;
+  width: 100%;
+
+  border-radius: 2px;
+  background-color: var(--accent-color);
 }
 
 .auth-list {
@@ -264,12 +280,6 @@ img {
   padding-bottom: 94px;
 }
 
-.works-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
 .works-title {
   font-size: 36px;
   line-height: 1.16;
@@ -278,6 +288,35 @@ img {
 
   color: var(--title-color);
   margin-bottom: 50px;
+}
+
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.works-item {
+  position: relative;
+}
+
+.works-type {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  width: 100%;
+
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(47, 48, 58, 0.8);
 }
 
 /* ------------------ OUR TEAM ------------------*/
